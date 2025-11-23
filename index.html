@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading System - Live Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI Trading System</h1>
+            <div class="status-indicator">
+                <span id="status" class="status-offline">Offline</span>
+                <button id="toggleTrading" class="btn btn-primary">Start Trading</button>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <!-- Performance Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Total Predictions</h3>
+                    <div id="totalPredictions" class="metric-value">0</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Accuracy</h3>
+                    <div id="accuracy" class="metric-value">0%</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Recent Accuracy</h3>
+                    <div id="recentAccuracy" class="metric-value">0%</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Live P&L</h3>
+                    <div id="livePnl" class="metric-value">$0.00</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Prediction Accuracy Over Time</h3>
+                    <canvas id="accuracyChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Live Price vs Predictions</h3>
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Predictions Table -->
+            <div class="predictions-section">
+                <h3>Recent Predictions</h3>
+                <div class="table-container">
+                    <table id="predictionsTable">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Symbol</th>
+                                <th>Signal</th>
+                                <th>Predicted</th>
+                                <th>Actual</th>
+                                <th>Confidence</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="predictionsBody">
+                            <!-- Predictions will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Memory Agent Insights -->
+            <div class="insights-section">
+                <h3>🧠 Memory Agent Insights</h3>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h4>Best Performing Symbols</h4>
+                        <div id="bestSymbols" class="insight-content">
+                            Loading...
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <h4>Trading Recommendations</h4>
+                        <div id="recommendations" class="insight-content">
+                            Loading...
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <h4>Pattern Success Rates</h4>
+                        <div id="patternRates" class="insight-content">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/trading.js"></script>
+</body>
+</html>
